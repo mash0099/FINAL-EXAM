@@ -4,7 +4,7 @@ const searchResult = document.getElementById('search-field');
 document.getElementById('search-btn').addEventListener('click', async () => {
     const searchText = searchResult.value;
     console.log(searchText);
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText};`
     const res = await fetch(url);
     const data = await res.json();
     console.log(data);
@@ -15,6 +15,9 @@ document.getElementById('search-btn').addEventListener('click', async () => {
 const displayMealDetails = meals => {
 
     searchedMeals.textContent = '';
+    if (meals.length > 5) {
+        //for show more
+    }
     meals.forEach(meal => {
         const div = document.createElement('div');
         div.classList.add('col');
@@ -35,8 +38,11 @@ const displayMealDetails = meals => {
     });
 }
 
+const toggleShowmore = more => {
+    document.getElementById('more-btn').style.display = more;
+}
+
 const clearAll = () => {
     searchedMeals.textContent = '';
     searchResult.value = '';
 }
-
