@@ -1,0 +1,8 @@
+.bg{
+    background-color: rgb(225, 170, 179);
+  }
+  footer {
+    height: 50px;
+    flex-shrink: 0;
+    background-color: #134c7d;
+  }
