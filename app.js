@@ -4,7 +4,7 @@ const searchResult = document.getElementById('search-field');
 document.getElementById('search-btn').addEventListener('click', async () => {
     const searchText = searchResult.value;
     console.log(searchText);
-    const url = https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText};
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
     const res = await fetch(url);
     const data = await res.json();
     console.log(data);
@@ -39,3 +39,4 @@ const clearAll = () => {
     searchedMeals.textContent = '';
     searchResult.value = '';
 }
+
